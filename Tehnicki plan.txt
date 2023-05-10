@@ -1,0 +1,37 @@
+Tehnicki plan za football statistic app
+
+1.Baza MSQL
+	Napraviti semu tabele i sve potrebne podatke koje treba da se skladiste u bazi
+
+2.Node.js
+	povezati bazu i node.js 
+
+3.Front
+	Pocetak utakmice
+	Nadoknada vremena prvo poluvreme
+
+	Start drugo poluvreme
+	Nadoknada vremena drugo poluvreme
+
+	Kraj utakmice
+	Prekinuta utakmica
+
+	Interakcija:
+
+	Teren - gde se nalazi lopta u datom trenutku
+	Posed
+
+	Velika sansa
+	Sut u okvir gola
+	Sut van okvira gola
+	Gol
+	Korner
+	Ofsajd
+	Indirekt
+	Aut
+	Faul
+	Slobodan udarac
+	Penal
+	Zuti karton
+	Crveni Karton
+	Izmena

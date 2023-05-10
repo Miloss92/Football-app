@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football statistic app</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="nav">
+            <div class="nav-logo-title">
+                <div class="nav-logo"></div>
+                <h1 class="nav-title">Football statistic</h1>
+            </div>
+            <div class="registration">
+                <img src="./assets/registration-icon.png" class="registration-icon">
+            </div>
+        </div>
+
+        <!-- REGISTRATION BUTTONS -->
+        <div class="registration-buttons display-none">
+            <button id="nav-sign-in-btn" class="registration-btns">Sign in</button>
+            <button id="nav-log-in-btn" class="registration-btns">Log in</button>
+            <button class="sign-out-btn">Sign out</button>
+        </div>
+
+        <!-- APP DESCRIPTION -->
+        <div class="app-desc" style="display: block">
+            <p>
+                Welcome to the FOOTBALL STATISTIC app.</br>
+                Log in as a user: </br>
+                email: milos@gmail.com password: milos123</br>
+                Log in as a worker:</br>
+                email: worker@gmail.com password: worker123
+            </p>
+        </div>
+        <div class="pop-up-wrapper">
+            <div class="sign-pop-up">
+                <div class="sign-in-header">
+                    <h2>Sign in</h2>
+                    <button class="x-btns hover-btns">X</button>
+                </div>
+                <form id="sign-in-form">
+                    <div class="sign-in-inputs">
+                        <label for="sign-in-email">E-mail adress</label>
+                        <input type="text" id="sign-in-email" name="sign-in-email"/>
+                        <label for="sing-in-password">Password</label>
+                        <input type="password" id="sign-in-password" name="sing-in-password"/>
+                    </div>
+                    <div class="btns-div">
+                        <button type="submit" class="sign-in-btn hover-btns">Sign in</button>
+                        <button class="close-btns hover-btns">Close</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="log-pop-up">
+                <div class="log-in-header">
+                    <h2>Log in</h2>
+                    <button class="x-btns hover-btns">X</button>
+                </div>
+                <form id="log-in-form">
+                    <div class="log-in-inputs">
+                        <label for="log-in-email">E-mail adress</label>
+                        <input type="text" id="log-in-email" name="log-in-email"/>
+                        <label for="log-in-password">Password</label>
+                        <input type="password" id="log-in-password" name="log-in-password"/>
+                    </div>
+                    <div class="btns-div">
+                        <button class="log-in-btn hover-btns">Log in</button>
+                        <button class="close-btns hover-btns">Close</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="sign-out-pop-up">
+                <div class="sign-out-header">
+                    <h2>Are you sure?</h2>
+                    <button class="x-btns hover-btns">X</button>
+                </div>
+                <div class="btns-div">
+                    <button class="sign-out-button">Sign out</button>
+                    <button class="close-btns hover-btns">Close</button>
+                </div>
+            </div>
+        </div>
+        <!-- WORKING TABLE ONLY FOR ADMINS/WORKERS -->
+        <div class="working-table" style="display: none;">
+            <div class="time">
+                <div>Home team</div>
+                <div>Time: <span>67</span>'</div>
+                <div>Away team</div>
+            </div>
+            <div class="result">
+                <img class="home-logo" src="./assets/Club logos/partizan-grb.png">
+                <div class="home-name">
+                    PARTIZAN
+                </div>
+                <div><span>3</span>:<span>0</span></div>
+                <div class="away-name">
+                    CRVENA ZVEZDA
+                </div>
+                <img class="away-logo" src="./assets/Club logos/zvezda-grb.png">
+            </div>
+            <div class="interaction-btns">
+                <div class="home-btns">
+                    <div class="working-btns">
+                        <p>Goal</p>
+                            <img src="./assets/goal.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Penalty</p>
+                            <img src="./assets/penalty-2.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Red card</p>
+                            <img src="./assets/red card.png">
+                            <p></p>
+                        </div>
+                        <div class="working-btns">
+                            <p>Possession</p>
+                            <img src="./assets/possession.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Big chance</p>
+                            <img src="./assets/big-chance.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Shot on target</p>
+                            <img src="./assets/shot-on-target.jpg">
+                        </div>
+                        <div class="working-btns">
+                            <p>Shot off target</p>
+                            <img src="./assets/shot-off-target.jpg">
+                        </div>
+                        <div class="working-btns">
+                            <p>Shot blocked</p>
+                            <img src="./assets/shoot-blocked.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Offside</p>
+                            <img src="./assets/offside.jpg">
+                        </div>
+                        <div class="working-btns">
+                            <p>Foul</p>
+                            <img src="./assets/faul-3.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Throw in</p>
+                            <img src="./assets/throw-in-ball.jpg">
+                        </div>
+                        <div class="working-btns">
+                            <p>Corner</p>
+                            <img src="./assets/corner.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Yellow card</p>
+                            <img src="./assets/yellow-card.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Penalty missed</p>
+                            <img src="./assets/penalty-missed.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Penalty saved</p>
+                            <img src="./assets/penalty-saved-2.png">
+                        </div>
+                    </div>
+                    <div class="away-btns">
+                        <div class="working-btns">
+                            <p>Goal</p>
+                            <img src="./assets/goal.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Penalty</p>
+                            <img src="./assets/penalty-2.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Red card</p>
+                            <img src="./assets/red card.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Possession</p>
+                            <img src="./assets/possession.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Big chance</p>
+                            <img src="./assets/big-chance.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Shot on target</p>
+                            <img src="./assets/shot-on-target.jpg">
+                        </div>
+                        <div class="working-btns">
+                            <p>Shot off target</p>
+                            <img src="./assets/shot-off-target.jpg">
+                        </div>
+                        <div class="working-btns">
+                            <p>Shot blocked</p>
+                            <img src="./assets/shoot-blocked.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Offside</p>
+                            <img src="./assets/offside.jpg">
+                        </div>
+                        
+                        <div class="working-btns">
+                            <p>Faul</p>
+                            <img src="./assets/faul-3.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Throw in</p>
+                            <img src="./assets/throw-in-ball.jpg">
+                        </div>
+                        <div class="working-btns">
+                            <p>Corner</p>
+                            <img src="./assets/corner.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Yellow card</p>
+                            <img src="./assets/yellow-card.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Penalty missed</p>
+                            <img src="./assets/penalty-missed.png">
+                        </div>
+                        <div class="working-btns">
+                            <p>Penalty saved</p>
+                            <img src="./assets/penalty-saved-2.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="football-fields">
+                    <div class="home-team">
+                        <img class="home-field" src="./assets/football-ground-1.jpg">
+                    </div>
+                    <div class="away-team">
+                        <img class="away-field" src="./assets/football-ground-1.jpg">
+                    </div>
+                </div>
+            </div>
+            <!-- STATISTIC  -->
+            <div class="statistic-wrapper" style="display: none">
+                <div class="statistic-nav">
+                    <button class="clubs-nav-btn tab-active">Clubs</button>
+                    <button class="table-nav-btn">Table</button>
+                    <button class="matches-nav-btn">Live matches</button>
+                </div>
+                <div class="stat-clubs">
+                    <div>
+                        <div class="club-ligue-info">
+                            <img src="./assets/mozzart bet superliga.jpg">               
+                        </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/partizan-grb.png">
+                        </div>
+                        <div>
+                            Club name: Partizan
+                        </div>
+                        <div>
+                            Founded in: 1945
+                        </div>
+                        <div>
+                            Stadium: Partizan stadium
+                        </div>
+                        <div>Capacity: 29.775</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/zvezda-grb.png">
+                        </div>
+                        <div>
+                            Club name: Crvena Zvezda
+                        </div>
+                        <div>
+                            Founded in: 1945
+                        </div>
+                        <div>
+                            Stadium: Rajko Mitić
+                        </div>
+                        <div>Capacity: 51.775</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/cukaricki.png">
+                        </div>
+                        <div>
+                            Club name: Cukaricki
+                        </div>
+                        <div>
+                            Founded in: 1926
+                        </div>
+                        <div>
+                            Stadium: Cukaricki stadium
+                        </div>
+                        <div>Capacity: 7.000</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/javor-grb.png">
+                        </div>
+                        <div>
+                            Club name: Javor
+                        </div>
+                        <div>
+                            Founded in: 1912
+                        </div>
+                        <div>
+                            Stadium: Javor
+                        </div>
+                        <div>Capacity: 3.000</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/vozdovac-grb.png">
+                        </div>
+                        <div>
+                            Club name: Vozdovac
+                        </div>
+                        <div>
+                            Founded in: 1912
+                        </div>
+                        <div>
+                            Stadium: Vozdovac
+                        </div>
+                        <div>Capacity: 5.174</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/kolubara-grb.png">
+                        </div>
+                        <div>
+                            Club name: Kolubara
+                        </div>
+                        <div>
+                            Founded in: 1915
+                        </div>
+                        <div>
+                            Stadium: Kolubara
+                        </div>
+                        <div>Capacity: 15.000</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/mladost-gat-grb.png">
+                        </div>
+                        <div>
+                            Club name: Mladost GAT
+                        </div>
+                        <div>
+                            Founded in: 1972
+                        </div>
+                        <div>
+                            Stadium: GAT Arena
+                        </div>
+                        <div>Capacity: 1.500</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/mladost-grb.png">
+                        </div>
+                        <div>
+                            Club name: Mladost Lucani
+                        </div>
+                        <div>
+                            Founded in: 1952
+                        </div>
+                        <div>
+                            Stadium: Mladost Lucani
+                        </div>
+                        <div>Capacity: 1.500</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/napredak-grb.png">
+                        </div>
+                        <div>
+                            Club name: Napredak
+                        </div>
+                        <div>
+                            Founded in: 1946
+                        </div>
+                        <div>
+                            Stadium: Mladost Krusevac
+                        </div>
+                        <div>Capacity: 25.000</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/novi-pazar-grb.png">
+                        </div>
+                        <div>
+                            Club name: Novi Pazar
+                        </div>
+                        <div>
+                            Founded in: 1928
+                        </div>
+                        <div>
+                            Stadium: City stadium
+                        </div>
+                        <div>Capacity: 10.000</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/radnicki-kragujevac-grb.png">
+                        </div>
+                        <div>
+                            Club name: Radnicki 1923
+                        </div>
+                        <div>
+                            Founded in: 1923
+                        </div>
+                        <div>
+                            Stadium: Cika Daca
+                        </div>
+                        <div>Capacity: 15.100</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/radnik-grb.png">
+                        </div>
+                        <div>
+                            Club name: Radnik Surdulica
+                        </div>
+                        <div>
+                            Founded in: 1926
+                        </div>
+                        <div>
+                            Stadium: Radnik Surdulica
+                        </div>
+                        <div>Capacity: 3.312</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/spartak-subotica-grb.png">
+                        </div>
+                        <div>
+                            Club name: Spartak Subotica
+                        </div>
+                        <div>
+                            Founded in: 1945
+                        </div>
+                        <div>
+                            Stadium: City stadium Subotica
+                        </div>
+                        <div>Capacity: 13.020</div>                    
+                    </div>
+                    <div class="club-info">
+                        <div>
+                            <img src="./assets/Club logos/tsc-backa-topola-grb.png">
+                        </div>
+                        <div>
+                            Club name: TSC Backa Topola
+                        </div>
+                        <div>
+                            Founded in: 1913
+                        </div>
+                        <div>
+                            Stadium: TSC Arena  
+                        </div>
+                        <div>Capacity: 4.500</div>                    
+                    </div>
+                </div>
+            </div>
+            <div class="stat-table-wrapper display-none">
+                <table class="stat-table">
+                    <tr>
+                        <th colspan="3">Club</th>
+                        <th>Wins</th>
+                        <th>Draws</th>
+                        <th>Loses</th>
+                        <th>Goals scored</th>
+                        <th>Goals conceded</th>
+                        <th>Points</th>
+                        
+                    </tr>
+                    <tr>
+                        <td class="table-number">1.</td>
+                        <td><img src="./assets/Club logos/partizan-grb.png"></td>
+                        <td>Partizan</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>12</td>
+                        <td>2</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">2.</td>
+                        <td><img src="./assets/Club logos/zvezda-grb.png"></td>
+                        <td>Crvena zvezda</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">3.</td>
+                        <td><img src="./assets/Club logos/cukaricki.png"></td>
+                        <td>Cukaricki</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">4.</td>
+                        <td><img src="./assets/Club logos/vojvodina-grb.png"></td>
+                        <td>Vojvodina</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">5.</td>
+                        <td><img src="./assets/Club logos/javor-grb.png"></td>
+                        <td>Javor</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">6.</td>
+                        <td><img src="./assets/Club logos/vozdovac-grb.png"></td>
+                        <td>Vozdovac</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">7.</td>
+                        <td><img src="./assets/Club logos/kolubara-grb.png"></td>
+                        <td>Kolubara</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">8.</td>
+                        <td><img src="./assets/Club logos/mladost-gat-grb.png"></td>
+                        <td>Mladost-GAT</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">9.</td>
+                        <td><img src="./assets/Club logos/mladost-grb.png"></td>
+                        <td>Mladost</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">10.</td>
+                        <td><img src="./assets/Club logos/napredak-grb.png"></td>
+                        <td>Napredak</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">11.</td>
+                        <td><img src="./assets/Club logos/novi-pazar-grb.png"></td>
+                        <td>Novi Pazar</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">12.</td>
+                        <td><img src="./assets/Club logos/radnicki-kragujevac-grb.png"></td>
+                        <td>Radnicki 1923</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">13.</td>
+                        <td><img src="./assets/Club logos/radnicki-nis-grb.png"></td>
+                        <td>Radnicki Nis</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">14.</td>
+                        <td><img src="./assets/Club logos/radnik-grb.png"></td>
+                        <td>Radnik</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">15.</td>
+                        <td><img src="./assets/Club logos/spartak-subotica-grb.png"></td>
+                        <td>Spartak Subotica</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="table-number">16.</td>
+                        <td><img src="./assets/Club logos/tsc-backa-topola-grb.png"></td>
+                        <td>TSC Backa Topola</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="stat-live-matches display-none">
+                <div class="live-match" id="1">
+                    <div class="live-match-clubs-res">
+                        <img src="./assets/Club logos/partizan-grb.png">
+                        <div class="live-home-team">
+                            <p>PARTIZAN</p>
+                        </div>
+                        <div class="live-result-time">
+                            <div class="live-result-date">14.04.2023</div>
+                            <div class="live-result">
+                                <span>2</span>:<span>1</span>
+                            </div>
+                            <div class="live-result-half"><span>2</span>nd Half - <span>70:34</span></div>
+                        </div>
+                        <div class="live-away-team">
+                            <p>CRVENA ZVEZDA</p>
+                        </div>
+                        <img src="./assets/Club logos/zvezda-grb.png">
+                    </div>
+                    <div class="precentage-wrapper display-none">
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Ball Possession</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="possession-home">58%</label>
+                                <progress id="possession-home" class="home-progress-bar" value="58" max="100"></progress>
+                                <progress id="possession-away" value="42" max="100"></progress>
+                                <label for="possession-away">42%</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Shot on Goal</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="shot-on-goal-home">6</label>
+                                <progress id="shot-on-goal-home" class="home-progress-bar" value="50" max="100"></progress>
+                                <progress id="shot-on-goal-away" value="50" max="100"></progress>
+                                <label for="shot-on-goal-away">6</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Shot off Goal</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="shot-off-goal-home">0</label>
+                                <progress id="shot-off-goal-home" class="home-progress-bar" value="0" max="100"></progress>
+                                <progress id="shot-off-goal-away" value="100" max="100"></progress>
+                                <label for="shot-off-goal-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Blocked Shots</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="blocked-shots-home">8</label>
+                                <progress id="blocked-shots-home" class="home-progress-bar" value="80" max="100"></progress>
+                                <progress id="blocked-shots-away" value="20" max="100"></progress>
+                                <label for="blocked-shots-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Free Kicks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="free-kicks-home">4</label>
+                                <progress id="free-kicks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="free-kicks-away" value="20" max="100"></progress>
+                                <label for="free-kicks-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Corner Kicks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="corner-kicks-home">4</label>
+                                <progress id="corner-kicks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="corner-kicks-away" value="20" max="100"></progress>
+                                <label for="corner-kicks-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Offsides</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="offsides-home">4</label>
+                                <progress id="offsides-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="offsides-away" value="20" max="100"></progress>
+                                <label for="offsides-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Throw-in</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="throw-in-home">4</label>
+                                <progress id="throw-in-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="throw-in-away" value="20" max="100"></progress>
+                                <label for="throw-in-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Fouls</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="fouls-home">4</label>
+                                <progress id="fouls-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="fouls-away" value="20" max="100"></progress>
+                                <label for="fouls-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Yellow cards</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="yellow-cards-home">4</label>
+                                <progress id="yellow-cards-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="yellow-cards-away" value="20" max="100"></progress>
+                                <label for="yellow-cards-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Red cards</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="red-cards-home">4</label>
+                                <progress id="red-cards-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="red-cards-away" value="20" max="100"></progress>
+                                <label for="red-cards-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Attacks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="attacks-home">4</label>
+                                <progress id="attacks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="attacks-away" value="20" max="100"></progress>
+                                <label for="attacks-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Dangerous Attacks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="dangerous-attacks-home">4</label>
+                                <progress id="dangerous-attacks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="dangerous-attacks-away" value="20" max="100"></progress>
+                                <label for="dangerous-attacks-away">2</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-match" id="2">
+                    <div class="live-match-clubs-res">
+                        <img src="./assets/Club logos/vojvodina-grb.png">
+                        <div class="live-home-team">
+                            <p>VOJVODINA</p>
+                        </div>
+                        <div class="live-result-time">
+                            <div class="live-result-date">14.04.2023</div>
+                            <div class="live-result">
+                                <span>1</span>:<span>1</span>
+                            </div>
+                            <div class="live-result-half"><span>1</span>nd Half - <span>35:02</span></div>
+                        </div>
+                        <div class="live-away-team">
+                            <p>CUKARICKI</p>
+                        </div>
+                        <img src="./assets/Club logos/cukaricki.png">
+                    </div>
+                    <div class="precentage-wrapper display-none">
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Ball Possession</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="possession-home">58%</label>
+                                <progress id="possession-home" class="home-progress-bar" value="58" max="100"></progress>
+                                <progress id="possession-away" value="42" max="100"></progress>
+                                <label for="possession-away">42%</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Shot on Goal</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="shot-on-goal-home">6</label>
+                                <progress id="shot-on-goal-home" class="home-progress-bar" value="50" max="100"></progress>
+                                <progress id="shot-on-goal-away" value="50" max="100"></progress>
+                                <label for="shot-on-goal-away">6</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Shot off Goal</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="shot-off-goal-home">0</label>
+                                <progress id="shot-off-goal-home" class="home-progress-bar" value="0" max="100"></progress>
+                                <progress id="shot-off-goal-away" value="100" max="100"></progress>
+                                <label for="shot-off-goal-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Blocked Shots</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="blocked-shots-home">8</label>
+                                <progress id="blocked-shots-home" class="home-progress-bar" value="80" max="100"></progress>
+                                <progress id="blocked-shots-away" value="20" max="100"></progress>
+                                <label for="blocked-shots-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Free Kicks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="free-kicks-home">4</label>
+                                <progress id="free-kicks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="free-kicks-away" value="20" max="100"></progress>
+                                <label for="free-kicks-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Corner Kicks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="corner-kicks-home">4</label>
+                                <progress id="corner-kicks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="corner-kicks-away" value="20" max="100"></progress>
+                                <label for="corner-kicks-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Offsides</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="offsides-home">4</label>
+                                <progress id="offsides-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="offsides-away" value="20" max="100"></progress>
+                                <label for="offsides-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Throw-in</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="throw-in-home">4</label>
+                                <progress id="throw-in-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="throw-in-away" value="20" max="100"></progress>
+                                <label for="throw-in-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Fouls</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="fouls-home">4</label>
+                                <progress id="fouls-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="fouls-away" value="20" max="100"></progress>
+                                <label for="fouls-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Yellow cards</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="yellow-cards-home">4</label>
+                                <progress id="yellow-cards-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="yellow-cards-away" value="20" max="100"></progress>
+                                <label for="yellow-cards-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Red cards</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="red-cards-home">4</label>
+                                <progress id="red-cards-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="red-cards-away" value="20" max="100"></progress>
+                                <label for="red-cards-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Attacks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="attacks-home">4</label>
+                                <progress id="attacks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="attacks-away" value="20" max="100"></progress>
+                                <label for="attacks-away">2</label>
+                            </div>
+                        </div>
+                        <div class="precentage-bars">
+                            <div class="precentage-header">
+                                <p>Dangerous Attacks</p>
+                            </div>
+                            <div class="stat-precentage">
+                                <label for="dangerous-attacks-home">4</label>
+                                <progress id="dangerous-attacks-home" class="home-progress-bar" value="60" max="100"></progress>
+                                <progress id="dangerous-attacks-away" value="20" max="100"></progress>
+                                <label for="dangerous-attacks-away">2</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
